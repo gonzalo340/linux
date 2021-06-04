@@ -35,7 +35,7 @@ useradd $USERNAME -g $GROUP -d $DIRECTORY -s /sbin/nologin
 #
 # # Primero me fijo si existe el fichero de credenciales
 #if [ -f "$HTPASSWD_FILE_DB" ]; then
-#    echo "$HTPASSWD_FILE_DB exists. No hago nada"
+#	echo "$HTPASSWD_FILE_DB exists. No hago nada"
 #else 
 #	touch $HTPASSWD_FILE_DB
 #fi
