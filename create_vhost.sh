@@ -23,6 +23,17 @@ fi
 
 # Agrego el usuario para la carpeta del virtualhost
 useradd $USERNAME -g $GROUP -d $DIRECTORY -s /sbin/nologin
+
+# Asigno contraseña del sistema al usuario recien creado
+# echo "LaClave" | passwd --stdin $USERNAME
+
+#####################################################################
+# Para crear las credenciales del usuario en un fichero que luego
+# se puede usar para autenticar una web con Auth Basic:
+# yum install httpd-tools ( comando para instalar htpasswd )
+# echo "LaClave" | htpasswd -c -i /ruta/fichero/users/db $USERNAME
+#####################################################################
+
 # Seteo todos los permisos para propietario y grupo
 chmod 770 $DIRECTORY
 echo "Usuario "$USERNAME "creado."
