@@ -31,7 +31,16 @@ useradd $USERNAME -g $GROUP -d $DIRECTORY -s /sbin/nologin
 # Para crear las credenciales del usuario en un fichero que luego
 # se puede usar para autenticar una web con Auth Basic:
 # yum install httpd-tools ( comando para instalar htpasswd )
-# echo "LaClave" | htpasswd -c -i /ruta/fichero/users/db $USERNAME
+# HTPASSWD_FILE_DB = /ruta/fichero/users/db
+#
+# # Primero me fijo si existe el fichero de credenciales
+#if [ -f "$HTPASSWD_FILE_DB" ]; then
+#    echo "$HTPASSWD_FILE_DB exists. No hago nada"
+#else 
+#	touch $HTPASSWD_FILE_DB
+#fi
+# Ahora ingreso el usuario con la password
+# echo "LaClave" | htpasswd -i $HTPASSWD_FILE_DB $USERNAME
 #####################################################################
 
 # Seteo todos los permisos para propietario y grupo
